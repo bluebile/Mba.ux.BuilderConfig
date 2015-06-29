@@ -4,20 +4,24 @@ Ext.define('Mba.ux.BuilderConfig.mixin.BuilderConfig', {
 
     onClassMixedIn: function(object)
     {
-        var object;
+        var cloneObject = Ext.clone(object);
 
-        while (!('initConfig' in object)) {
-            object = object.superclass;
+        while (!('initConfig' in cloneObject)) {
+            cloneObject = object.superclass;
         }
 
-        Ext.Function.interceptBefore(object, 'initConfig', function() {
+        Ext.Function.interceptBefore(cloneObject, 'initConfig', function() {
             var baseName = object.$className.substr(object.$className.lastIndexOf('.') + 1),
-                config;
+                config, initialConfig;
 
             config = Mba.ux.BuilderConfig.get(baseName.toLowerCase());
 
             if (Ext.isObject(config)) {
-                object.initialConfig = Ext.Object.merge(config, object.initialConfig);
+                initialConfig = object.prototype.config;
+                if (object.prototype.initialConfig) {
+                    initialConfig = object.prototype.initialConfig;
+                }
+                Ext.Object.merge(initialConfig, config);
             }
         });
     }
