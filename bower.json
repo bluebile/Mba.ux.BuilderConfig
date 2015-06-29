@@ -1,0 +1,35 @@
+{
+    "name": "Mba.ux.BuilderConfig",
+    "version": "0.0.1",
+    "homepage": "https://github.com/bluebile/Mba.ux.BuilderConfig",
+    "authors": [
+        "Bluebile <info@bluebile.com>"
+    ],
+    "description": "Builder de comfiguração para os projetos",
+    "main": [
+        "BuilderConfig.js"
+    ],
+    "keywords": [
+        "senchatouch",
+        "extjs",
+        "ux",
+        "model",
+        "builder",
+        "config",
+        "global"
+    ],
+    "license": "MIT",
+    "ignore": [
+        "**/.*",
+        "node_modules",
+        "bower_components",
+        "demo",
+        "ux",
+        "**/*.*~",
+        "Gruntfile.js",
+        "bower.json",
+        "package.json",
+        "test",
+        "tests"
+    ]
+}
