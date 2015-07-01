@@ -4,9 +4,9 @@ Ext.define('Mba.ux.BuilderConfig.loader.Json', {
 
     config: {
         files: {
-            "sql":       'resources/globals/sql.js',
-            "sqlnative": 'resources/globals/sql.js',
-            "pushwoosh": 'resources/globals/pushwoosh.js'
+            "sql":             'resources/globals/sql.js',
+            "sqlnative":       'resources/globals/sql.js',
+            "pushnotificaton": 'resources/globals/pushnotificaton.js'
         }
     },
 
