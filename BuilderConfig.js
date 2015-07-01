@@ -1,5 +1,6 @@
 Ext.define('Mba.ux.BuilderConfig', {
     extend: 'Ext.Evented',
+    requires: [ 'Mba.ux.BuilderConfig.loader.Json' ],
     alternateClassName: 'Config',
     singleton: true,
     data: {},
