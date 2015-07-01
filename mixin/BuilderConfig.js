@@ -15,7 +15,6 @@ Ext.define('Mba.ux.BuilderConfig.mixin.BuilderConfig', {
                 config, initialConfig;
 
             config = Mba.ux.BuilderConfig.get(baseName.toLowerCase());
-
             if (Ext.isObject(config)) {
                 initialConfig = object.prototype.config;
                 if (object.prototype.initialConfig) {
