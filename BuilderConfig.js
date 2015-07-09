@@ -29,17 +29,25 @@ Ext.define('Mba.ux.BuilderConfig', {
     setData: function(data)
     {
         var resultData = this._validateData(data);
+        this._setData(resultData);
+    },
 
-        this.config = resultData;
-        this.data   = resultData;
+    _setData: function(data)
+    {
+        this.config = data;
+        this.data   = data;
     },
 
     mergeData: function(data)
     {
         var resultData = this._validateData(data);
+        this._mergeData(data);
+    },
 
-        Ext.Object.merge(this.config, resultData);
-        Ext.Object.merge(this.data, resultData);
+    _mergeData: function(data)
+    {
+        Ext.Object.merge(this.config, data);
+        Ext.Object.merge(this.data, data);
     },
 
     set: function(id, value)
