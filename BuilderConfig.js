@@ -1,14 +1,8 @@
 Ext.define('Mba.ux.BuilderConfig', {
-    extend: 'Ext.Evented',
+    singleton: true,
     requires: [ 'Mba.ux.BuilderConfig.loader.Json' ],
     alternateClassName: 'Config',
-    singleton: true,
     data: {},
-
-    constructor: function()
-    {
-        this.setData(Ext.create('Mba.ux.BuilderConfig.loader.Json'));
-    },
 
     _validateData: function(data)
     {
@@ -19,7 +13,7 @@ Ext.define('Mba.ux.BuilderConfig', {
 
         resultData = data;
 
-        if (data instanceof Mba.ux.BuilderConfig.loader.LoaderAbstract) {
+        if (data.superclass &&  data.superclass.$className === 'Mba.ux.BuilderConfig.loader.LoaderAbstract') {
             resultData = data.loadData();
         }
 
@@ -34,7 +28,6 @@ Ext.define('Mba.ux.BuilderConfig', {
 
     _setData: function(data)
     {
-        this.config = data;
         this.data   = data;
     },
 
@@ -46,7 +39,6 @@ Ext.define('Mba.ux.BuilderConfig', {
 
     _mergeData: function(data)
     {
-        Ext.Object.merge(this.config, data);
         Ext.Object.merge(this.data, data);
     },
 

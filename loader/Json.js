@@ -3,11 +3,7 @@ Ext.define('Mba.ux.BuilderConfig.loader.Json', {
     requires: [ 'Ext.Ajax' ],
 
     config: {
-        files: {
-            "sql":             'resources/globals/sql.js',
-            "sqlnative":       'resources/globals/sql.js',
-            "pushnotificaton": 'resources/globals/pushnotificaton.js'
-        }
+        files: {}
     },
 
     mergeFiles: function(files)
