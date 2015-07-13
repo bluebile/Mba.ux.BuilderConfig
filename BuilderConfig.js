@@ -49,6 +49,27 @@ Ext.define('Mba.ux.BuilderConfig', {
 
     get: function(id)
     {
-        return this.data[id];
+        var value = this.data[id];
+
+        if (!value) {
+            // lançar exception
+            return '';
+        }
+
+        return this.extractValue(value);
+    },
+
+    extractValue: function(value)
+    {
+        var matches, i, id;
+        matches = value.match(/(\{.*?\})/g);
+        if (matches) {
+            for (i = 0; i < matches.length; i++) {
+                id = matches[i].replace(/[{}]/g, '');
+                value = value.replace(matches[i], this.get(id));
+            }
+        }
+
+        return value;
     }
 });
