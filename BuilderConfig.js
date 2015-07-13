@@ -50,7 +50,6 @@ Ext.define('Mba.ux.BuilderConfig', {
 
     get: function(id)
     {
-        this.validateId(id);
         var value = this.data[id];
 
         if (!value) {
