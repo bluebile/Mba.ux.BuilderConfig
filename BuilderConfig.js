@@ -44,11 +44,13 @@ Ext.define('Mba.ux.BuilderConfig', {
 
     set: function(id, value)
     {
+        this.validateId(id);
         this.data[id] = value;
     },
 
     get: function(id)
     {
+        this.validateId(id);
         var value = this.data[id];
 
         if (!value) {
@@ -71,5 +73,7 @@ Ext.define('Mba.ux.BuilderConfig', {
         }
 
         return value;
-    }
+    },
+
+    validateId: function(id) {}
 });
