@@ -63,6 +63,9 @@ Ext.define('Mba.ux.BuilderConfig', {
     extractValue: function(value)
     {
         var matches, i, id;
+        if (Ext.isObject(value)) {
+            return value;
+        }
         matches = value.match(/(\{.*?\})/g);
         if (matches) {
             for (i = 0; i < matches.length; i++) {
