@@ -60,7 +60,7 @@ Ext.define('Mba.ux.BuilderConfig', {
         return this.extractValue(value);
     },
 
-    extractValue: function(value)
+    extractValue: function(value, idMain)
     {
         var matches, i, id;
         if (Ext.isObject(value)) {
@@ -70,11 +70,16 @@ Ext.define('Mba.ux.BuilderConfig', {
         if (matches) {
             for (i = 0; i < matches.length; i++) {
                 id = matches[i].replace(/[{}]/g, '');
-                value = value.replace(matches[i], this.get(id));
+                value = value.replace(matches[i], this.getExtraValue(id, idMain));
             }
         }
 
         return value;
+    },
+
+    getExtraValue: function(id, idMain)
+    {
+        return this.get(id);
     },
 
     validateId: function(id) {}
