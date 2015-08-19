@@ -1,5 +1,3 @@
 languages:
   - javascript
   - js
-files:
-  - "*.js"

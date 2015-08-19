@@ -8,7 +8,7 @@ var gulp = require('gulp'),
 
 knownOptions = {
     string: [ 'target', 'reporter-lint', 'reporter-cs', 'output-cpd' ],
-    default: { "target": '*.js', "reporter-lint": 'default' }
+    default: { "target": ['loader/*.js', 'mixin/*.js', 'BuilderConfig.js'], "reporter-lint": 'default' }
 };
 
 configCS = {
@@ -34,7 +34,7 @@ gulp.task('lint', function() {
         .pipe(jshint.reporter(options['reporter-lint']));
 });
 
-gulp.task('cs', function (cb) {
+gulp.task('cs', function(cb) {
     return gulp.src(options.target)
         .pipe(jscs(configCS));
 

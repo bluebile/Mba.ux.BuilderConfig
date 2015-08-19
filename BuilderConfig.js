@@ -33,7 +33,6 @@ Ext.define('Mba.ux.BuilderConfig', {
 
     mergeData: function(data)
     {
-        var resultData = this._validateData(data);
         this._mergeData(data);
     },
 
