@@ -61,15 +61,19 @@ Ext.define('Mba.ux.BuilderConfig', {
 
     extractValue: function(value, idMain)
     {
-        var matches, i, id;
+        var matches, i, id, extraValue;
         if (Ext.isObject(value)) {
             return value;
         }
+
         matches = value.match(/(\{.*?\})/g);
         if (matches) {
             for (i = 0; i < matches.length; i++) {
                 id = matches[i].replace(/[{}]/g, '');
-                value = value.replace(matches[i], this.getExtraValue(id, idMain));
+                extraValue = this.getExtraValue(id, idMain);
+                if (extraValue) {
+                    value = value.replace(matches[i], extraValue);
+                }
             }
         }
 

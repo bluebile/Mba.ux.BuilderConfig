@@ -1,6 +1,6 @@
 {
     "name": "Mba.ux.BuilderConfig",
-    "version": "0.0.9",
+    "version": "0.0.10",
     "homepage": "https://github.com/bluebile/Mba.ux.BuilderConfig",
     "authors": [
         "Bluebile <info@bluebile.com>"
@@ -26,7 +26,7 @@
         "demo",
         "ux",
         "**/*.*~",
-        "Gruntfile.js",
+        "gulpfile.js",
         "bower.json",
         "package.json",
         "test",
