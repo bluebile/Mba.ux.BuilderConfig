@@ -1,9 +1,13 @@
 Ext.define('Mba.ux.BuilderConfig.mixin.BuilderConfig', {
     extend: 'Ext.mixin.Mixin',
-    requires: [ 'Mba.ux.BuilderConfig' ],
+    requires: [ 'Mba.ux.BuilderConfig', 'Mba.ux.Initialize' ],
 
     onClassMixedIn: function(object)
     {
+        if (!Mba.ux.Initialize.isInit()) {
+            Mba.ux.Initialize.init();
+        }
+
         var cloneObject = Ext.clone(object);
 
         while (!('initConfig' in cloneObject)) {
