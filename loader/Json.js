@@ -18,6 +18,7 @@ Ext.define('Mba.ux.BuilderConfig.loader.Json', {
             Ext.Ajax.request({
                 method: 'GET',
                 url: files[index],
+                responseType: 'text',
                 async: false,
                 success: function(response) {
                     result[index] = Ext.decode(response.responseText);
