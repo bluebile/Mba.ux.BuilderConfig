@@ -1,6 +1,5 @@
 Ext.define('Mba.ux.BuilderConfig', {
     singleton: true,
-    requires: [ 'Mba.ux.BuilderConfig.loader.Json' ],
     alternateClassName: 'Config',
     data: {},
 
