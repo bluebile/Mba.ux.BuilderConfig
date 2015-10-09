@@ -1,6 +1,6 @@
 Ext.define('Mba.ux.BuilderConfig.loader.Json', {
     extend: 'Mba.ux.BuilderConfig.loader.LoaderAbstract',
-    requires: [ 'Ext.Ajax' ],
+    //requires: [ 'Ext.Ajax' ],
 
     config: {
         files: {}
